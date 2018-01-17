@@ -13,6 +13,8 @@ def check_password(hashed_password, user_password):
     password, salt = hashed_password.split(':')
     return password == hashlib.sha256(salt.encode() + user_password.encode()).hexdigest()
 
+variable_list = []
+
 while 1==1:
     mchoice = input('What would you like to do: \n \n 1: Sign up \n 2: Log in \n 3: I forgot my password! \n')
 
@@ -20,6 +22,8 @@ while 1==1:
         usern = input('Please enter your username: ')
         password = input('Please enter a password: ')
         exec(usern + ' = hash_password(password)')
+        variable_list.append(eval(usern))
+        print(variable_list)
         os.system('cls')
     elif mchoice == "2":
         check_u = input('Username: ')
