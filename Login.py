@@ -1,5 +1,6 @@
 import uuid
 import hashlib
+import os
 
 
 def hash_password(password):
@@ -12,18 +13,23 @@ def check_password(hashed_password, user_password):
     password, salt = hashed_password.split(':')
     return password == hashlib.sha256(salt.encode() + user_password.encode()).hexdigest()
 
-choice = input('What would you like to do: \n \n 1: Sign up \n 2: Log in \n 3: I forgot my password! \n')
-if choice == 1:
-    usern = input('Please enter your username: ')
-    password = input('Please enter a password: ')
-    exec(usern + ' = hash_password(password)')
-    print(usern)
-    print(exec(usern))
-elif choice == 2:
-    old_pass = input('Now please enter the password again to check: ')
-    if check_password(hashed_password, old_pass):
-        print('You entered the right password')
-    else:
-        print('I am sorry but the password does not match')
-elif choice == 3:
-    print("That sounds like a you problem.")
+while 1==1:
+    mchoice = input('What would you like to do: \n \n 1: Sign up \n 2: Log in \n 3: I forgot my password! \n')
+
+    if mchoice == "1":
+        usern = input('Please enter your username: ')
+        password = input('Please enter a password: ')
+        exec(usern + ' = hash_password(password)')
+        os.system('cls')
+    elif mchoice == "2":
+        check_u = input('Username: ')
+        check_p = input('Password: ')
+        if check_password(eval(check_u), check_p):
+            print('You entered the right password')
+            input('Press enter to continue...')
+        else:
+            print('I am sorry but the password does not match')
+            input('Press enter to continue...')
+    elif mchoice == "3":
+        print("That sounds like a you problem.")
+        input('Press enter to continue...')
