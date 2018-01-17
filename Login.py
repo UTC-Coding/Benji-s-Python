@@ -22,8 +22,6 @@ while 1==1:
         usern = input('Please enter your username: ')
         password = input('Please enter a password: ')
         exec(usern + ' = hash_password(password)')
-        variable_list.append(eval(usern))
-        print(variable_list)
         os.system('cls')
     elif mchoice == "2":
         check_u = input('Username: ')
