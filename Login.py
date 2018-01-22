@@ -17,7 +17,6 @@ variable_list = []
 
 while 1==1:
     mchoice = input('What would you like to do: \n \n 1: Sign up \n 2: Log in \n 3: I forgot my password! \n')
-
     if mchoice == "1":
         usern = input('Please enter your username: ')
         password = input('Please enter a password: ')
