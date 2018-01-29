@@ -16,21 +16,25 @@ def check_password(hashed_password, user_password):
 variable_list = []
 
 while 1==1:
-    mchoice = input('What would you like to do: \n \n 1: Sign up \n 2: Log in \n 3: I forgot my password! \n')
+    mchoice = input('What would you like to do: \n \n 1: Sign up \n 2: Log in \n 3: I forgot my password! \n 4: Exit \n')
     if mchoice == "1":
         usern = input('Please enter your username: ')
         password = input('Please enter a password: ')
-        exec(usern + ' = hash_password(password)')
-        os.system('cls')
+        if (usern != "") and (password != ""):
+            exec(usern + ' = hash_password(password)')
+            os.system('cls')
     elif mchoice == "2":
         check_u = input('Username: ')
         check_p = input('Password: ')
-        if check_password(eval(check_u), check_p):
-            print('You entered the right password')
-            input('Press enter to continue...')
-        else:
-            print('I am sorry but the password does not match')
-            input('Press enter to continue...')
+        if (check_u != "") and (check_p != ""):
+            if check_password(eval(check_u), check_p):
+                print('You entered the right password')
+                input('Press enter to continue...')
+            else:
+                print('I am sorry but the password does not match')
+                input('Press enter to continue...')
     elif mchoice == "3":
         print("That sounds like a you problem.")
         input('Press enter to continue...')
+    elif mchoice == "4":
+        exit()
