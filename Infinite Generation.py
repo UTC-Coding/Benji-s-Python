@@ -11,7 +11,6 @@ num1 = 1
 
 
 while 1==1:
-
     # Moves the turtle
     bob.forward(num1)
     bob.left(90)
