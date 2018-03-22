@@ -1,0 +1,45 @@
+import string
+from random import *
+
+
+global userlength
+global userpassword
+
+print("\n\nHello welcome to my BFA made by amir g")
+print("This is a work in progress, we trying to make it faster")
+
+
+print("\nLets begin:")
+userlength = int(input("\nHow long do you want your password to be"))
+userpassword = input("\nWhats your password")
+
+def main():
+    global password
+    allchar = string.ascii_letters + string.punctuation + string.digits
+    password = "".join(choice(allchar) for x in range(randint(userlength, userlength)))
+    print(password)
+
+
+
+main()
+
+while password != userpassword:
+    print(main())
+    
+    if(password == userpassword):
+        print("\n \n \n \n \n \n \n \n \n \n \n \n Cracked" + " Your password was ", password)
+        break
+
+    
+
+
+
+
+    
+
+
+
+    
+    
+    
+
