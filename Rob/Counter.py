@@ -1,12 +1,14 @@
 qnt = 0
-total = float(0.0)
+total = 0.1
 
 def qst(denomination, value):
-    qnt = input(print("How many " + denomination + "? "))
+    qnt = input("How many " + denomination + "? ")
     qnt = float(qnt)
     value = float(value)
     subtotal = value * qnt
-    total =+ subtotal
+    total = float(total)
+    total = total + subtotal
+    return total
 
 qst("pennies", 0.01)
 qst("5 pence pieces", 0.05)
